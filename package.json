@@ -9,7 +9,9 @@
     "build": "ncc build src/index.js -o dist --license licenses.txt",
     "check:dist": "node scripts/check-dist.js"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.11.1",
@@ -18,6 +20,10 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.4",
-    "vitest": "^3.2.4"
+    "vitest": "^5.0.5"
+  },
+  "overrides": {
+    "undici": "^6.29.0",
+    "uuid": "^11.1.1"
   }
 }

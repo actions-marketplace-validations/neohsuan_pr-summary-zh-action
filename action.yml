@@ -1,5 +1,5 @@
-name: pr-summary-zh-action
-description: Summarize PR changes and risks in Traditional Chinese using OpenAI, Gemini or Vertex AI.
+name: PR Summary zh-TW (Traditional Chinese PR Review)
+description: Post a Traditional Chinese (繁體中文) PR change summary and risk notes using OpenAI, Gemini or Vertex AI.
 author: neohsuan
 branding:
   icon: message-square
