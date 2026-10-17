@@ -23,7 +23,7 @@ jobs:
     if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
-      - uses: neohsuan/pr-summary-zh-action@main
+      - uses: neohsuan/pr-summary-zh-action@v1
         with:
           provider: openai
           model: gpt-4o-mini
@@ -92,7 +92,7 @@ steps:
       workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
       service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
       create_credentials_file: true
-  - uses: neohsuan/pr-summary-zh-action@main
+  - uses: neohsuan/pr-summary-zh-action@v1
     with:
       provider: vertex
       model: gemini-2.5-flash
