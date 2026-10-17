@@ -1,0 +1,37 @@
+name: pr-summary-zh-action
+description: Summarize PR changes and risks in Traditional Chinese using OpenAI, Gemini or Vertex AI.
+author: neohsuan
+branding:
+  icon: message-square
+  color: blue
+inputs:
+  provider:
+    description: 'LLM provider: openai, gemini or vertex'
+    default: openai
+  model:
+    description: 'Model ID supported by the selected provider (required)'
+    required: true
+  api-key:
+    description: OpenAI or Gemini API key (required for those providers)
+  github-token:
+    description: GitHub token with pull-requests write permission
+    default: ${{ github.token }}
+  max-diff-chars:
+    description: Maximum Unicode characters of diff sent to the provider
+    default: '60000'
+  language:
+    description: Output language (zh-TW means Traditional Chinese)
+    default: zh-TW
+  vertex-project:
+    description: Google Cloud project ID (required for vertex)
+  vertex-location:
+    description: Vertex AI region or global
+    default: us-central1
+  vertex-access-token:
+    description: Optional OAuth access token; otherwise use Application Default Credentials
+outputs:
+  comment-id:
+    description: ID of the created or updated PR comment
+runs:
+  using: node20
+  main: dist/index.js

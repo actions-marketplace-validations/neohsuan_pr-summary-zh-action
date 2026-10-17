@@ -1,0 +1,23 @@
+{
+  "name": "pr-summary-zh-action",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Action for Traditional Chinese PR summaries with OpenAI, Gemini or Vertex AI",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "vitest run",
+    "build": "ncc build src/index.js -o dist --license licenses.txt",
+    "check:dist": "node scripts/check-dist.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.1",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4",
+    "vitest": "^3.2.4"
+  }
+}
